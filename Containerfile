@@ -7,8 +7,8 @@ RUN dnf install -y --setopt=install_weak_deps=False \
     ripgrep \
     && dnf clean all
 
-# Install OpenCode globally via npm
-RUN npm install -g opencode-ai \
+# Install the latest OpenCode v2 globally via npm
+RUN npm install -g @opencode/cli@latest \
     && npm cache clean --force
 
 # Create the agent user with a fixed UID/GID of 1000
